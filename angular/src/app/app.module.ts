@@ -17,6 +17,11 @@ import { AbpOAuthModule } from '@abp/ng.oauth';
 import { ThemeLeptonXModule } from '@abp/ng.theme.lepton-x';
 import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
 import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { GridModule } from '@progress/kendo-angular-grid';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,17 +33,20 @@ import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account';
     }),
     AbpOAuthModule.forRoot(),
     ThemeSharedModule.forRoot(),
-    
+
     AccountConfigModule.forRoot(),
     IdentityConfigModule.forRoot(),
     TenantManagementConfigModule.forRoot(),
     SettingManagementConfigModule.forRoot(),
-    
-    
+
+
     FeatureManagementModule.forRoot(),
               ThemeLeptonXModule.forRoot(),
               SideMenuLayoutModule.forRoot(),
               AccountLayoutModule.forRoot(),
+              InputsModule,
+              ButtonsModule,
+              GridModule,
   ],
   declarations: [AppComponent],
   providers: [APP_ROUTE_PROVIDER],

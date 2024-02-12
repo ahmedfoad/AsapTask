@@ -1,6 +1,5 @@
 import type { ClientDto } from './dto/models';
 import { RestService, Rest } from '@abp/ng.core';
-import type { PagedAndSortedResultRequestDto, PagedResultDto } from '@abp/ng.core';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,11 +9,11 @@ export class ClientService {
   apiName = 'Default';
   
 
-  create = (input: ClientDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, ClientDto>({
+  create = (clientDto: ClientDto, config?: Partial<Rest.Config>) =>
+    this.restService.request<any, void>({
       method: 'POST',
       url: '/api/app/client',
-      body: input,
+      body: clientDto,
     },
     { apiName: this.apiName,...config });
   
@@ -35,20 +34,19 @@ export class ClientService {
     { apiName: this.apiName,...config });
   
 
-  getList = (input: PagedAndSortedResultRequestDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, PagedResultDto<ClientDto>>({
+  getAll = (config?: Partial<Rest.Config>) =>
+    this.restService.request<any, ClientDto[]>({
       method: 'GET',
       url: '/api/app/client',
-      params: { sorting: input.sorting, skipCount: input.skipCount, maxResultCount: input.maxResultCount },
     },
     { apiName: this.apiName,...config });
   
 
-  update = (id: number, input: ClientDto, config?: Partial<Rest.Config>) =>
-    this.restService.request<any, ClientDto>({
+  update = (id: number, clientDto: ClientDto, config?: Partial<Rest.Config>) =>
+    this.restService.request<any, void>({
       method: 'PUT',
       url: `/api/app/client/${id}`,
-      body: input,
+      body: clientDto,
     },
     { apiName: this.apiName,...config });
 

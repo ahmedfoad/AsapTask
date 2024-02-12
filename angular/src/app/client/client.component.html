@@ -18,37 +18,22 @@
     </div>
   </div>
   <div class="card-body">
-    <ngx-datatable [rows]="client.items" [count]="client.totalCount" [list]="list" default>
-      <ngx-datatable-column [name]="'FirstName'" prop="firstName"></ngx-datatable-column>
-      <ngx-datatable-column [name]="'LastName'" prop="lastName"></ngx-datatable-column>
-      <ngx-datatable-column [name]="'Email'" prop="email"></ngx-datatable-column>
-      <ngx-datatable-column [name]="'PhoneNumber'" prop="phoneNumber"></ngx-datatable-column>
-      <ngx-datatable-column [name]="'Nationality'" prop="nationality"></ngx-datatable-column>
-      <!-- <ngx-datatable-column [name]="'::PublishDate' | abpLocalization" prop="publishDate">
-        <ng-template let-row="row" ngx-datatable-cell-template>
-          {{ row.firstName }}
-        </ng-template>
-      </ngx-datatable-column> -->
-      <ngx-datatable-column [name]="'::Actions' | abpLocalization" [maxWidth]="150" [sortable]="false">
-        <ng-template let-row="row" ngx-datatable-cell-template>
-          <div ngbDropdown container="body" class="d-inline-block">
-            <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              ngbDropdownToggle>
-              <i class="fa fa-cog me-1"></i>{{ '::Actions' | abpLocalization }}
-            </button>
-            <div ngbDropdownMenu>
-              <button ngbDropdownItem (click)="edit(row.id)">
-                {{ '::Edit' | abpLocalization }}
-              </button>
-              <button ngbDropdownItem (click)="delete(row.id)">
-                {{ '::Delete' | abpLocalization }}
-            </button>
-            </div>
-          </div>
-        </ng-template>
-      </ngx-datatable-column>
 
-    </ngx-datatable>
+    <kendo-grid [kendoGridBinding]="clientsList" [pageable]="true" [pageSize]="5" [sortable]="true">
+      <kendo-grid-column field="firstName" title="First Name">
+      </kendo-grid-column>
+      <kendo-grid-column field="lastName" title="LastName">
+      </kendo-grid-column>
+      <kendo-grid-column field="email" title="Email"> </kendo-grid-column>
+      <kendo-grid-column field="phoneNumber" title="Phone Number"> </kendo-grid-column>
+      <kendo-grid-column field="nationality" title="Nationality"> </kendo-grid-column>
+      <kendo-grid-command-column title="Actions" [width]="220">
+        <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem>
+          <button kendoGridEditCommand [primary]="true" (click)="edit(dataItem.id)">Edit</button>
+          <button kendoGridRemoveCommand (click)="delete(dataItem.id)">Remove</button>
+        </ng-template>
+      </kendo-grid-command-column>
+    </kendo-grid>
   </div>
 </div>
 
@@ -82,7 +67,9 @@
 
       <div class="mt-2">
         <label for="client-price">Nationality</label><span> * </span>
-        <input type="text" id="client-nationality" class="form-control" formControlName="nationality" />
+        <select id="client-nationality" class="form-control" formControlName="nationality">
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
       </div>
       <!-- <div class="mt-2">
         <label for="client-type">Nationality</label><span> * </span>

@@ -13,13 +13,11 @@ namespace AsapTask.StockMarket
     {
         public IPolygonService _polygonService;
         private readonly IEmailSender _emailSender;
-        public StockMarketService(IEmailSender emailSender)
-        {
-            _emailSender = emailSender;
-        }
-        public StockMarketService(IPolygonService polygonService)
+      
+        public StockMarketService(IPolygonService polygonService, IEmailSender emailSender)
         {
             _polygonService = polygonService;
+            _emailSender = emailSender;
         }
         public async Task FetchMarketStockData()
         {

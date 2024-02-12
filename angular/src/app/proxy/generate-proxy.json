@@ -1550,6 +1550,119 @@
       "rootPath": "app",
       "remoteServiceName": "Default",
       "controllers": {
+        "AsapTask.StockMarket.StockMarketService": {
+          "controllerName": "StockMarket",
+          "controllerGroupName": "StockMarket",
+          "isRemoteService": true,
+          "isIntegrationService": false,
+          "apiVersion": null,
+          "type": "AsapTask.StockMarket.StockMarketService",
+          "interfaces": [
+            {
+              "type": "AsapTask.StockMarket.IStockMarketService",
+              "name": "IStockMarketService",
+              "methods": [
+                {
+                  "name": "FetchMarketStockData",
+                  "parametersOnMethod": [],
+                  "returnValue": {
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": {
+            "FetchMarketStockData": {
+              "uniqueName": "FetchMarketStockData",
+              "name": "FetchMarketStockData",
+              "httpMethod": "POST",
+              "url": "api/app/stock-market/fetch-market-stock-data",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "AsapTask.StockMarket.IStockMarketService"
+            }
+          }
+        },
+        "AsapTask.Polygon.PolygonService": {
+          "controllerName": "Polygon",
+          "controllerGroupName": "Polygon",
+          "isRemoteService": true,
+          "isIntegrationService": false,
+          "apiVersion": null,
+          "type": "AsapTask.Polygon.PolygonService",
+          "interfaces": [
+            {
+              "type": "AsapTask.Polygon.IPolygonService",
+              "name": "IPolygonService",
+              "methods": [
+                {
+                  "name": "CreateAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "polygonDataDto",
+                      "typeAsString": "AsapTask.Polygon.Dto.PolygonDataDto, AsapTask.Application",
+                      "type": "AsapTask.Polygon.Dto.PolygonDataDto",
+                      "typeSimple": "AsapTask.Polygon.Dto.PolygonDataDto",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": {
+            "CreateAsyncByPolygonDataDto": {
+              "uniqueName": "CreateAsyncByPolygonDataDto",
+              "name": "CreateAsync",
+              "httpMethod": "POST",
+              "url": "api/app/polygon",
+              "supportedVersions": [],
+              "parametersOnMethod": [
+                {
+                  "name": "polygonDataDto",
+                  "typeAsString": "AsapTask.Polygon.Dto.PolygonDataDto, AsapTask.Application",
+                  "type": "AsapTask.Polygon.Dto.PolygonDataDto",
+                  "typeSimple": "AsapTask.Polygon.Dto.PolygonDataDto",
+                  "isOptional": false,
+                  "defaultValue": null
+                }
+              ],
+              "parameters": [
+                {
+                  "nameOnMethod": "polygonDataDto",
+                  "name": "polygonDataDto",
+                  "jsonName": null,
+                  "type": "AsapTask.Polygon.Dto.PolygonDataDto",
+                  "typeSimple": "AsapTask.Polygon.Dto.PolygonDataDto",
+                  "isOptional": false,
+                  "defaultValue": null,
+                  "constraintTypes": null,
+                  "bindingSourceId": "Body",
+                  "descriptorName": ""
+                }
+              ],
+              "returnValue": {
+                "type": "System.Void",
+                "typeSimple": "System.Void"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "AsapTask.Polygon.IPolygonService"
+            }
+          }
+        },
         "AsapTask.Clients.ClientService": {
           "controllerName": "Client",
           "controllerGroupName": "Client",
@@ -1563,44 +1676,10 @@
               "name": "IClientService",
               "methods": [
                 {
-                  "name": "GetAsync",
-                  "parametersOnMethod": [
-                    {
-                      "name": "id",
-                      "typeAsString": "System.Int32, System.Private.CoreLib",
-                      "type": "System.Int32",
-                      "typeSimple": "number",
-                      "isOptional": false,
-                      "defaultValue": null
-                    }
-                  ],
-                  "returnValue": {
-                    "type": "AsapTask.Clients.Dto.ClientDto",
-                    "typeSimple": "AsapTask.Clients.Dto.ClientDto"
-                  }
-                },
-                {
-                  "name": "GetListAsync",
-                  "parametersOnMethod": [
-                    {
-                      "name": "input",
-                      "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                      "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                      "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                      "isOptional": false,
-                      "defaultValue": null
-                    }
-                  ],
-                  "returnValue": {
-                    "type": "Volo.Abp.Application.Dtos.PagedResultDto<AsapTask.Clients.Dto.ClientDto>",
-                    "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<AsapTask.Clients.Dto.ClientDto>"
-                  }
-                },
-                {
                   "name": "CreateAsync",
                   "parametersOnMethod": [
                     {
-                      "name": "input",
+                      "name": "clientDto",
                       "typeAsString": "AsapTask.Clients.Dto.ClientDto, AsapTask.Application",
                       "type": "AsapTask.Clients.Dto.ClientDto",
                       "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1609,8 +1688,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "AsapTask.Clients.Dto.ClientDto",
-                    "typeSimple": "AsapTask.Clients.Dto.ClientDto"
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
                   }
                 },
                 {
@@ -1625,7 +1704,7 @@
                       "defaultValue": null
                     },
                     {
-                      "name": "input",
+                      "name": "clientDto",
                       "typeAsString": "AsapTask.Clients.Dto.ClientDto, AsapTask.Application",
                       "type": "AsapTask.Clients.Dto.ClientDto",
                       "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1634,8 +1713,8 @@
                     }
                   ],
                   "returnValue": {
-                    "type": "AsapTask.Clients.Dto.ClientDto",
-                    "typeSimple": "AsapTask.Clients.Dto.ClientDto"
+                    "type": "System.Void",
+                    "typeSimple": "System.Void"
                   }
                 },
                 {
@@ -1654,20 +1733,45 @@
                     "type": "System.Void",
                     "typeSimple": "System.Void"
                   }
+                },
+                {
+                  "name": "GetAsync",
+                  "parametersOnMethod": [
+                    {
+                      "name": "id",
+                      "typeAsString": "System.Int32, System.Private.CoreLib",
+                      "type": "System.Int32",
+                      "typeSimple": "number",
+                      "isOptional": false,
+                      "defaultValue": null
+                    }
+                  ],
+                  "returnValue": {
+                    "type": "AsapTask.Clients.Dto.ClientDto",
+                    "typeSimple": "AsapTask.Clients.Dto.ClientDto"
+                  }
+                },
+                {
+                  "name": "GetAllAsync",
+                  "parametersOnMethod": [],
+                  "returnValue": {
+                    "type": "System.Collections.Generic.List<AsapTask.Clients.Dto.ClientDto>",
+                    "typeSimple": "[AsapTask.Clients.Dto.ClientDto]"
+                  }
                 }
               ]
             }
           ],
           "actions": {
-            "CreateAsyncByInput": {
-              "uniqueName": "CreateAsyncByInput",
+            "CreateAsyncByClientDto": {
+              "uniqueName": "CreateAsyncByClientDto",
               "name": "CreateAsync",
               "httpMethod": "POST",
               "url": "api/app/client",
               "supportedVersions": [],
               "parametersOnMethod": [
                 {
-                  "name": "input",
+                  "name": "clientDto",
                   "typeAsString": "AsapTask.Clients.Dto.ClientDto, AsapTask.Application",
                   "type": "AsapTask.Clients.Dto.ClientDto",
                   "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1677,8 +1781,8 @@
               ],
               "parameters": [
                 {
-                  "nameOnMethod": "input",
-                  "name": "input",
+                  "nameOnMethod": "clientDto",
+                  "name": "clientDto",
                   "jsonName": null,
                   "type": "AsapTask.Clients.Dto.ClientDto",
                   "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1690,14 +1794,14 @@
                 }
               ],
               "returnValue": {
-                "type": "AsapTask.Clients.Dto.ClientDto",
-                "typeSimple": "AsapTask.Clients.Dto.ClientDto"
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               },
               "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.ICreateAppService<AsapTask.Clients.Dto.ClientDto,AsapTask.Clients.Dto.ClientDto>"
+              "implementFrom": "AsapTask.Clients.IClientService"
             },
-            "UpdateAsyncByIdAndInput": {
-              "uniqueName": "UpdateAsyncByIdAndInput",
+            "UpdateAsyncByIdAndClientDto": {
+              "uniqueName": "UpdateAsyncByIdAndClientDto",
               "name": "UpdateAsync",
               "httpMethod": "PUT",
               "url": "api/app/client/{id}",
@@ -1712,7 +1816,7 @@
                   "defaultValue": null
                 },
                 {
-                  "name": "input",
+                  "name": "clientDto",
                   "typeAsString": "AsapTask.Clients.Dto.ClientDto, AsapTask.Application",
                   "type": "AsapTask.Clients.Dto.ClientDto",
                   "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1734,8 +1838,8 @@
                   "descriptorName": ""
                 },
                 {
-                  "nameOnMethod": "input",
-                  "name": "input",
+                  "nameOnMethod": "clientDto",
+                  "name": "clientDto",
                   "jsonName": null,
                   "type": "AsapTask.Clients.Dto.ClientDto",
                   "typeSimple": "AsapTask.Clients.Dto.ClientDto",
@@ -1747,11 +1851,11 @@
                 }
               ],
               "returnValue": {
-                "type": "AsapTask.Clients.Dto.ClientDto",
-                "typeSimple": "AsapTask.Clients.Dto.ClientDto"
+                "type": "System.Void",
+                "typeSimple": "System.Void"
               },
               "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IUpdateAppService<AsapTask.Clients.Dto.ClientDto,System.Int32,AsapTask.Clients.Dto.ClientDto>"
+              "implementFrom": "AsapTask.Clients.IClientService"
             },
             "DeleteAsyncById": {
               "uniqueName": "DeleteAsyncById",
@@ -1788,7 +1892,22 @@
                 "typeSimple": "System.Void"
               },
               "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IDeleteAppService<System.Int32>"
+              "implementFrom": "AsapTask.Clients.IClientService"
+            },
+            "GetAllAsync": {
+              "uniqueName": "GetAllAsync",
+              "name": "GetAllAsync",
+              "httpMethod": "GET",
+              "url": "api/app/client",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "System.Collections.Generic.List<AsapTask.Clients.Dto.ClientDto>",
+                "typeSimple": "[AsapTask.Clients.Dto.ClientDto]"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "AsapTask.Clients.IClientService"
             },
             "GetAsyncById": {
               "uniqueName": "GetAsyncById",
@@ -1825,68 +1944,7 @@
                 "typeSimple": "AsapTask.Clients.Dto.ClientDto"
               },
               "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<AsapTask.Clients.Dto.ClientDto,AsapTask.Clients.Dto.ClientDto,System.Int32,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
-            },
-            "GetListAsyncByInput": {
-              "uniqueName": "GetListAsyncByInput",
-              "name": "GetListAsync",
-              "httpMethod": "GET",
-              "url": "api/app/client",
-              "supportedVersions": [],
-              "parametersOnMethod": [
-                {
-                  "name": "input",
-                  "typeAsString": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto, Volo.Abp.Ddd.Application.Contracts",
-                  "type": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "typeSimple": "Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto",
-                  "isOptional": false,
-                  "defaultValue": null
-                }
-              ],
-              "parameters": [
-                {
-                  "nameOnMethod": "input",
-                  "name": "Sorting",
-                  "jsonName": null,
-                  "type": "System.String",
-                  "typeSimple": "string",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "SkipCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                },
-                {
-                  "nameOnMethod": "input",
-                  "name": "MaxResultCount",
-                  "jsonName": null,
-                  "type": "System.Int32",
-                  "typeSimple": "number",
-                  "isOptional": false,
-                  "defaultValue": null,
-                  "constraintTypes": null,
-                  "bindingSourceId": "ModelBinding",
-                  "descriptorName": "input"
-                }
-              ],
-              "returnValue": {
-                "type": "Volo.Abp.Application.Dtos.PagedResultDto<AsapTask.Clients.Dto.ClientDto>",
-                "typeSimple": "Volo.Abp.Application.Dtos.PagedResultDto<AsapTask.Clients.Dto.ClientDto>"
-              },
-              "allowAnonymous": null,
-              "implementFrom": "Volo.Abp.Application.Services.IReadOnlyAppService<AsapTask.Clients.Dto.ClientDto,AsapTask.Clients.Dto.ClientDto,System.Int32,Volo.Abp.Application.Dtos.PagedAndSortedResultRequestDto>"
+              "implementFrom": "AsapTask.Clients.IClientService"
             }
           }
         }
@@ -9089,7 +9147,7 @@
         }
       ]
     },
-    "AsapTask.Clients.Dto.ClientDto": {
+    "AsapTask.Polygon.Dto.PolygonDataDto": {
       "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Int32>",
       "isEnum": false,
       "enumNames": null,
@@ -9097,7 +9155,7 @@
       "genericArguments": null,
       "properties": [
         {
-          "name": "FirstName",
+          "name": "Status",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -9109,7 +9167,19 @@
           "regex": null
         },
         {
-          "name": "LastName",
+          "name": "From",
+          "jsonName": null,
+          "type": "System.DateTime",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Symbol",
           "jsonName": null,
           "type": "System.String",
           "typeSimple": "string",
@@ -9121,10 +9191,10 @@
           "regex": null
         },
         {
-          "name": "Email",
+          "name": "Open",
           "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
+          "type": "System.Decimal",
+          "typeSimple": "number",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,
@@ -9133,10 +9203,10 @@
           "regex": null
         },
         {
-          "name": "PhoneNumber",
+          "name": "High",
           "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
+          "type": "System.Decimal",
+          "typeSimple": "number",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,
@@ -9145,10 +9215,58 @@
           "regex": null
         },
         {
-          "name": "Nationality",
+          "name": "Low",
           "jsonName": null,
-          "type": "System.String",
-          "typeSimple": "string",
+          "type": "System.Decimal",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Close",
+          "jsonName": null,
+          "type": "System.Decimal",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Volume",
+          "jsonName": null,
+          "type": "System.Decimal",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "AfterHours",
+          "jsonName": null,
+          "type": "System.Decimal",
+          "typeSimple": "number",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PreMarket",
+          "jsonName": null,
+          "type": "System.Decimal",
+          "typeSimple": "number",
           "isRequired": false,
           "minLength": null,
           "maxLength": null,
@@ -9188,6 +9306,75 @@
       "enumValues": null,
       "genericArguments": null,
       "properties": []
+    },
+    "AsapTask.Clients.Dto.ClientDto": {
+      "baseType": "Volo.Abp.Application.Dtos.EntityDto<System.Int32>",
+      "isEnum": false,
+      "enumNames": null,
+      "enumValues": null,
+      "genericArguments": null,
+      "properties": [
+        {
+          "name": "FirstName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "LastName",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Email",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": true,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "PhoneNumber",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        },
+        {
+          "name": "Nationality",
+          "jsonName": null,
+          "type": "System.String",
+          "typeSimple": "string",
+          "isRequired": false,
+          "minLength": null,
+          "maxLength": null,
+          "minimum": null,
+          "maximum": null,
+          "regex": null
+        }
+      ]
     }
   }
 }

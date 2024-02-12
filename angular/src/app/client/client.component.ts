@@ -1,10 +1,13 @@
 import { ListService, PagedResultDto } from '@abp/ng.core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientService } from '@proxy/clients';
 import { ClientDto } from '@proxy/clients/dto/models';
 import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
-
+import { DataBindingDirective, GridDataResult, PageChangeEvent, PagerPosition, PagerType } from '@progress/kendo-angular-grid';
+import { SVGIcon, filePdfIcon } from '@progress/kendo-svg-icons';
+import { process } from "@progress/kendo-data-query";
+import { GoogleMapsService } from '../services/googleMaps.service';
 
 @Component({
   selector: 'app-client',
@@ -13,23 +16,41 @@ import { ConfirmationService, Confirmation } from '@abp/ng.theme.shared';
   providers: [ListService],
 })
 export class ClientComponent implements OnInit {
-  client = { items: [], totalCount: 0 } as PagedResultDto<ClientDto>;
+  public clientsList: ClientDto[];
   isModalOpen = false; // add this line
   form: FormGroup; // add this line
   selectedClient = {} as ClientDto;
+  countries: string[];
 
   constructor(public readonly list: ListService,
     private clientService: ClientService,
     private fb: FormBuilder, // inject FormBuilder
-    private confirmation: ConfirmationService // inject the ConfirmationService
+    private confirmation: ConfirmationService, // inject the ConfirmationService
+    private googleMapsService: GoogleMapsService
   ) { }
 
   ngOnInit() {
-    const clientStreamCreator = (query) => this.clientService.getList(query);
+    this.getAllClients();
 
-    this.list.hookToQuery(clientStreamCreator).subscribe((response) => {
-      this.client = response;
+    this.googleMapsService.getCountries().subscribe(countries => {
+      this.countries = countries;
+      debugger;
+      var x =1;
     });
+  }
+
+  getAllClients() {
+    this.clientService.getAll()
+      .subscribe(
+        (clients: ClientDto[]) => {
+          this.clientsList = clients;
+          console.log(clients);
+        },
+        (error) => {
+          // Handle error
+          console.error('Error fetching clients:', error);
+        }
+      );
   }
 
   create() {
@@ -49,10 +70,10 @@ export class ClientComponent implements OnInit {
   // add buildForm method
   buildForm() {
     this.form = this.fb.group({
-      firstName: [this.selectedClient.firstName || '', Validators.required],
-      lastName: [this.selectedClient.lastName || '', Validators.required],
-      email: [this.selectedClient.email || null, Validators.required],
-      phoneNumber: [this.selectedClient.phoneNumber || null, Validators.required],
+      firstName: [this.selectedClient.firstName || ''],
+      lastName: [this.selectedClient.lastName || ''],
+      email: [this.selectedClient.email || null],
+      phoneNumber: [this.selectedClient.phoneNumber || null],
       nationality: [this.selectedClient.nationality || null],
     });
   }
@@ -72,6 +93,8 @@ export class ClientComponent implements OnInit {
       this.form.reset();
       this.list.get();
     });
+
+    this.getAllClients();
   }
 
   // Add a delete method
@@ -79,7 +102,10 @@ delete(id: number) {
   this.confirmation.warn('::AreYouSureToDelete', '::AreYouSure').subscribe((status) => {
     if (status === Confirmation.Status.confirm) {
       this.clientService.delete(id).subscribe(() => this.list.get());
+      this.getAllClients();
     }
   });
 }
 }
+
+

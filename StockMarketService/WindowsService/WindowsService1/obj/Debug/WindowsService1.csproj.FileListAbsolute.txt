@@ -1,0 +1,15 @@
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\WindowsService1.exe.config
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\WindowsService1.exe
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\WindowsService1.pdb
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\StockMarketService.dll
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\Newtonsoft.Json.dll
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\StockMarketService.pdb
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\StockMarketService.dll.config
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\bin\Debug\Newtonsoft.Json.xml
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.csproj.AssemblyReference.cache
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.cache
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.csproj.CoreCompileInputs.cache
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.csproj.CopyComplete
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.exe
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\WindowsService\WindowsService1\obj\Debug\WindowsService1.pdb

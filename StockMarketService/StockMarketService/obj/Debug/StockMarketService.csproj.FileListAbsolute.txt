@@ -1,0 +1,10 @@
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\bin\StockMarketService.dll.config
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\bin\StockMarketService.dll
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\bin\StockMarketService.pdb
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\obj\Debug\StockMarketService.csproj.AssemblyReference.cache
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\obj\Debug\StockMarketService.csproj.CoreCompileInputs.cache
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\obj\Debug\StockMarketService.dll
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\obj\Debug\StockMarketService.pdb
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\bin\Newtonsoft.Json.dll
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\bin\Newtonsoft.Json.xml
+D:\Work\Interview\01 ASAP\Git\AsapTask\StockMarketService\StockMarketService\obj\Debug\StockMarketService.csproj.CopyComplete

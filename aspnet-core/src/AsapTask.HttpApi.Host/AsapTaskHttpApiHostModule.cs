@@ -63,6 +63,7 @@ public class AsapTaskHttpApiHostModule : AbpModule
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddTransient<IStockMarketService, StockMarketService>();
+        //context.Services.AddTransient<StockMarketBackGroudJob>();
         var configuration = context.Services.GetConfiguration();
         var hostingEnvironment = context.Services.GetHostingEnvironment();
 

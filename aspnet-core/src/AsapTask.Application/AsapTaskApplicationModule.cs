@@ -23,9 +23,7 @@ namespace AsapTask;
     typeof(AbpPermissionManagementApplicationModule),
     typeof(AbpTenantManagementApplicationModule),
     typeof(AbpFeatureManagementApplicationModule),
-    typeof(AbpSettingManagementApplicationModule),
-    //typeof(AbpBackgroundWorkersModule)
-    typeof(AbpBackgroundWorkersQuartzModule) //Add BackgroundWorkersQuartz
+    typeof(AbpSettingManagementApplicationModule)
     )]
 public class AsapTaskApplicationModule : AbpModule
 {
@@ -35,19 +33,5 @@ public class AsapTaskApplicationModule : AbpModule
         {
             options.AddMaps<AsapTaskApplicationModule>();
         });
-
-        Configure<AbpBackgroundWorkerQuartzOptions>(options =>
-        {
-            options.IsAutoRegisterEnabled = true;
-        });
-
-
     }
-
-
-    //public override async Task OnApplicationInitializationAsync(
-    //    ApplicationInitializationContext context)
-    //{
-    //    await context.AddBackgroundWorkerAsync<MyLogWorker>();
-    //}
 }

@@ -20,6 +20,31 @@
     "@angular/platform-browser": "~17.0.0",
     "@angular/platform-browser-dynamic": "~17.0.0",
     "@angular/router": "~17.0.0",
+    "@progress/kendo-angular-buttons": "^15.0.1",
+    "@progress/kendo-angular-common": "^15.0.1",
+    "@progress/kendo-angular-dateinputs": "^15.0.1",
+    "@progress/kendo-angular-dialog": "15.0.1",
+    "@progress/kendo-angular-dropdowns": "^15.0.1",
+    "@progress/kendo-angular-excel-export": "^15.0.1",
+    "@progress/kendo-angular-grid": "^15.0.1",
+    "@progress/kendo-angular-icons": "^15.0.1",
+    "@progress/kendo-angular-inputs": "^15.0.1",
+    "@progress/kendo-angular-intl": "^15.0.1",
+    "@progress/kendo-angular-l10n": "^15.0.1",
+    "@progress/kendo-angular-label": "^15.0.1",
+    "@progress/kendo-angular-layout": "^15.0.1",
+    "@progress/kendo-angular-navigation": "^15.0.1",
+    "@progress/kendo-angular-pdf-export": "^15.0.1",
+    "@progress/kendo-angular-popup": "^15.0.1",
+    "@progress/kendo-angular-progressbar": "15.0.1",
+    "@progress/kendo-angular-treeview": "^15.0.1",
+    "@progress/kendo-angular-upload": "15.0.1",
+    "@progress/kendo-angular-utils": "^15.0.1",
+    "@progress/kendo-data-query": "^1.7.0",
+    "@progress/kendo-drawing": "^1.19.0",
+    "@progress/kendo-licensing": "^1.3.5",
+    "@progress/kendo-svg-icons": "^2.0.0",
+    "@progress/kendo-theme-default": "^7.2.0",
     "bootstrap-icons": "~1.8.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.0.0",
@@ -72,6 +97,22 @@
         "hash": "540290621358387889"
       },
       {
+        "file": ".nx/cache/file-map.json",
+        "hash": "17162440761447508133"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "10653904132153822020"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "9268249279822184617"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "4384171207493029687"
+      },
+      {
         "file": ".prettierrc",
         "hash": "6168493806199751027"
       },
@@ -81,19 +122,27 @@
       },
       {
         "file": "angular.json",
-        "hash": "15270422030147519498"
+        "hash": "6604598261693703964"
       },
       {
         "file": "karma.conf.js",
         "hash": "2043058465387999022"
       },
       {
+        "file": "kendo-ui-license.txt",
+        "hash": "15410921380107657124"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "8212357419031262295"
+      },
+      {
         "file": "package.json",
-        "hash": "14820245281763137891"
+        "hash": "15355453950247218953"
       },
       {
         "file": "src/app/app-routing.module.ts",
-        "hash": "454662850193529821"
+        "hash": "4083844236649904912"
       },
       {
         "file": "src/app/app.component.ts",
@@ -101,7 +150,31 @@
       },
       {
         "file": "src/app/app.module.ts",
-        "hash": "1258557560134516785"
+        "hash": "3980597052642695557"
+      },
+      {
+        "file": "src/app/client/client-routing.module.ts",
+        "hash": "1978449495869331364"
+      },
+      {
+        "file": "src/app/client/client.component.html",
+        "hash": "13269004314647993832"
+      },
+      {
+        "file": "src/app/client/client.component.scss",
+        "hash": "11982053226494856543"
+      },
+      {
+        "file": "src/app/client/client.component.spec.ts",
+        "hash": "4229012869746686201"
+      },
+      {
+        "file": "src/app/client/client.component.ts",
+        "hash": "1812533800932646339"
+      },
+      {
+        "file": "src/app/client/client.module.ts",
+        "hash": "18284407612909481238"
       },
       {
         "file": "src/app/home/home-routing.module.ts",
@@ -128,8 +201,60 @@
         "hash": "8782860134245389693"
       },
       {
+        "file": "src/app/proxy/README.md",
+        "hash": "1477775973619250547"
+      },
+      {
+        "file": "src/app/proxy/clients/client.service.ts",
+        "hash": "4893238729864883225"
+      },
+      {
+        "file": "src/app/proxy/clients/dto/index.ts",
+        "hash": "12954640855103947404"
+      },
+      {
+        "file": "src/app/proxy/clients/dto/models.ts",
+        "hash": "7562558777835950892"
+      },
+      {
+        "file": "src/app/proxy/clients/index.ts",
+        "hash": "5544711963166408478"
+      },
+      {
+        "file": "src/app/proxy/generate-proxy.json",
+        "hash": "14839817573909151565"
+      },
+      {
+        "file": "src/app/proxy/index.ts",
+        "hash": "1811404151197771842"
+      },
+      {
+        "file": "src/app/proxy/polygon/dto/index.ts",
+        "hash": "12954640855103947404"
+      },
+      {
+        "file": "src/app/proxy/polygon/dto/models.ts",
+        "hash": "1171122474814133745"
+      },
+      {
+        "file": "src/app/proxy/polygon/index.ts",
+        "hash": "12868458411455783025"
+      },
+      {
+        "file": "src/app/proxy/polygon/polygon.service.ts",
+        "hash": "6582190920129921739"
+      },
+      {
+        "file": "src/app/proxy/stock-market/index.ts",
+        "hash": "12996977030991203481"
+      },
+      {
+        "file": "src/app/proxy/stock-market/stock-market.service.ts",
+        "hash": "15547712642469983506"
+      },
+      {
         "file": "src/app/route.provider.ts",
-        "hash": "6783774909916844039"
+        "hash": "2835109290110776812"
       },
       {
         "file": "src/app/shared/shared.module.ts",
@@ -165,7 +290,7 @@
       },
       {
         "file": "src/main.ts",
-        "hash": "5887030582951756191"
+        "hash": "17019291768944937131"
       },
       {
         "file": "src/polyfills.ts",
@@ -185,7 +310,7 @@
       },
       {
         "file": "tsconfig.app.json",
-        "hash": "9041030522571917449"
+        "hash": "11474309097541706346"
       },
       {
         "file": "tsconfig.json",
@@ -193,11 +318,11 @@
       },
       {
         "file": "tsconfig.spec.json",
-        "hash": "17198424518534092990"
+        "hash": "16809514954184988286"
       },
       {
         "file": "yarn.lock",
-        "hash": "11558213510845125153"
+        "hash": "5331906603766931153"
       }
     ]
   }
